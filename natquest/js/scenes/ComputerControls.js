@@ -20,7 +20,7 @@ export default class ComputerControls extends Phaser.Scene  {
       this.cursors = data.cursors;
   console.log("Received player in ComputerControls:", this.player); // Log player reference
        console.log("Received player body in ComputerControls:", this.player.body);
-       console.log("Received player body velocity in ComputerControls:", this.player.body.velocity); // Log player reference
+      // console.log("Received player body velocity in ComputerControls:", this.player.body.velocity); // Log player reference
       // Log player reference
   }
 
