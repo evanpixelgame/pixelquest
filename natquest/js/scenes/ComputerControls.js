@@ -5,6 +5,8 @@ export default class ComputerControls extends Phaser.Scene  {
 
     this.player = null; // Initialize player reference
     this.speed = 0; // Initialize speed
+    this.velocity = this.player.body.velocity;\
+    this.cursors = null;
   }
 
 
@@ -12,7 +14,12 @@ export default class ComputerControls extends Phaser.Scene  {
     // Retrieve player reference and speed from the data object
     this.player = data.player;
     this.speed = data.speed;
+      this.velocity = data.velocity;
+      this.cursors = data.cursors;
   console.log("Received player in ComputerControls:", this.player); // Log player reference
+       console.log("Received player body in ComputerControls:", this.player.body);
+       console.log("Received player body velocity in ComputerControls:", this.player.body.velocity); // Log player reference
+      // Log player reference
   }
 
   
@@ -21,13 +28,6 @@ export default class ComputerControls extends Phaser.Scene  {
   }
 
   create() {
-
-   //     this.openWorldScene = this.scene.get('OpenWorld');
-     //   this.player = this.openWorldScene.player;
-       // this.speed = this.openWorldScene.speed;
-
-    
-    // COMPUTER/TV SCREEN SPECIFIC LOGIC 
 
   // Create controls for arrow keys and WASD
   this.cursors = this.input.keyboard.addKeys({
