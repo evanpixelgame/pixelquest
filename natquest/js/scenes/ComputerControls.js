@@ -65,7 +65,7 @@ update(time, delta) {
     }
 
     // Set the velocity of the player sprite's Matter.js body
-    this.player.body.setVelocity(velocityX, velocityY);
+    this.player.body.velocity(velocityX, velocityY);
 
     // Play appropriate animation based on movement direction
     if (velocityX !== 0 || velocityY !== 0) {
