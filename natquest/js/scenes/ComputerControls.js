@@ -7,6 +7,8 @@ export default class ComputerControls extends Phaser.Scene  {
     this.speed = 0; // Initialize speed
     this.velocity = this.player.body.velocity;
     this.cursors = null;
+   this.player.body = player.body;
+   this.player.body.velocity = player.body.velocity;
   }
 
 
@@ -50,15 +52,15 @@ update(time, delta) {
 
     // Determine velocity based on key presses
     if (this.cursors.up.isDown) {
-        velocityY = -this.speed;
+        this.player.body.velocity = -this.speed;
     } else if (this.cursors.down.isDown) {
-        velocityY = this.speed;
+        this.player.body.velocity = this.speed;
     }
 
     if (this.cursors.left.isDown) {
-        velocityX = -this.speed;
+         this.player.body.velocity = -this.speed;
     } else if (this.cursors.right.isDown) {
-        velocityX = this.speed;
+         this.player.body.velocity = this.speed;
     }
 
     // Normalize velocity to prevent faster movement diagonally
